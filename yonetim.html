@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yönetim Paneli — {{brand}}</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0a0a0b">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-solid-nav="1">
+  <div id="nav-host"></div>
+
+  <!-- PIN Kapısı -->
+  <section class="admin-gate" id="gate">
+    <div class="gate-box">
+      <span class="logo-mark" style="width:56px;height:56px" id="gate-logo"></span>
+      <h1 style="font-size:2rem">Yönetim Paneli</h1>
+      <p class="lead" style="text-align:center">Devam etmek için 4 haneli PIN kodunu girin.</p>
+      <div class="pin" id="pin">
+        <input inputmode="numeric" maxlength="1" autofocus aria-label="PIN 1">
+        <input inputmode="numeric" maxlength="1" aria-label="PIN 2">
+        <input inputmode="numeric" maxlength="1" aria-label="PIN 3">
+        <input inputmode="numeric" maxlength="1" aria-label="PIN 4">
+      </div>
+      <div class="err" id="pin-err"></div>
+      <a href="index.html" class="btn btn-dark btn-sm">Siteye Dön</a>
+    </div>
+  </section>
+
+  <!-- Panel -->
+  <main class="admin" id="admin">
+    <div class="container">
+      <div class="toolbar">
+        <div class="group">
+          <h1 style="font-size:1.8rem">Randevular</h1>
+          <span class="mode-pill" id="mode-pill"></span>
+        </div>
+        <div class="group">
+          <button class="btn btn-dark btn-sm" id="btn-refresh">Yenile</button>
+          <button class="btn btn-dark btn-sm" id="btn-export">CSV İndir</button>
+          <button class="btn btn-dark btn-sm" id="btn-demo" title="Yerel modda örnek randevular oluşturur">Demo Veri</button>
+          <button class="btn btn-dark btn-sm" id="btn-logout">Çıkış</button>
+        </div>
+      </div>
+
+      <div class="kpis" id="kpis"></div>
+
+      <div class="toolbar">
+        <div class="group">
+          <div class="seg" id="range">
+            <button data-range="today" class="on">Bugün</button>
+            <button data-range="tomorrow">Yarın</button>
+            <button data-range="week">Bu Hafta</button>
+            <button data-range="all">Tümü</button>
+          </div>
+          <input type="date" id="f-date" aria-label="Tarih">
+          <select id="f-barber" aria-label="Berber"><option value="">Tüm berberler</option></select>
+          <select id="f-status" aria-label="Durum">
+            <option value="">Tüm durumlar</option>
+            <option value="beklemede">Beklemede</option>
+            <option value="onaylandi">Onaylandı</option>
+            <option value="tamamlandi">Tamamlandı</option>
+            <option value="iptal">İptal</option>
+          </select>
+          <input type="search" id="f-q" placeholder="İsim, telefon ya da kod ara…" aria-label="Ara">
+        </div>
+        <div class="group">
+          <div class="seg" id="view">
+            <button data-view="list" class="on">Liste</button>
+            <button data-view="timeline">Zaman Çizelgesi</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="content"></div>
+    </div>
+  </main>
+
+  <!-- Detay modalı -->
+  <div class="modal" id="modal">
+    <div class="modal-box">
+      <div class="modal-head">
+        <div><span class="eyebrow" id="m-code"></span><h3 id="m-title" style="margin-top:8px"></h3></div>
+        <button class="icon-btn" id="m-close" aria-label="Kapat"></button>
+      </div>
+      <div class="detail-grid" id="m-details"></div>
+      <div>
+        <div style="font-size:.78rem;color:var(--muted-2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px">Durum</div>
+        <div class="status-btns" id="m-status"></div>
+      </div>
+      <div class="step-actions" style="margin-top:0">
+        <button class="btn btn-dark btn-sm" id="m-delete" style="color:var(--danger)">Sil</button>
+        <a class="btn btn-wa btn-sm" id="m-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>

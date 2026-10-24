@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Randevu Al — {{brand}}</title>
+  <meta name="description" content="Online randevu: hizmetinizi ve berberinizi seçin, uygun saati ayırtın.">
+  <meta name="theme-color" content="#0a0a0b">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-solid-nav="1">
+  <div id="nav-host"></div>
+
+  <main class="page">
+    <div class="container">
+      <div class="page-head">
+        <span class="eyebrow">Online Rezervasyon</span>
+        <h1 style="font-size:clamp(2.2rem,5vw,4rem)">Randevu <em class="accent">oluşturun</em></h1>
+        <p class="lead">Beş kısa adımda yerinizi ayırtın. Randevunuz anında kaydedilir ve size bir onay kodu verilir.</p>
+      </div>
+
+      <div class="stepper" id="stepper">
+        <div class="step-dot active" data-step="1"><i></i><span>Hizmet</span></div>
+        <div class="step-dot" data-step="2"><i></i><span>Berber</span></div>
+        <div class="step-dot" data-step="3"><i></i><span>Tarih & Saat</span></div>
+        <div class="step-dot" data-step="4"><i></i><span>Bilgiler</span></div>
+        <div class="step-dot" data-step="5"><i></i><span>Onay</span></div>
+      </div>
+
+      <div class="booking-layout">
+        <div class="panel" id="panel">
+
+          <!-- 1: Hizmet -->
+          <section class="step active" data-step="1">
+            <h2>Hangi hizmeti istersiniz?</h2>
+            <p class="hint">Birden fazla hizmet seçebilirsiniz; süre ve ücret otomatik toplanır.</p>
+            <div class="choice-grid" id="service-list"></div>
+            <div class="step-actions">
+              <span></span>
+              <button class="btn btn-gold" id="next-1" disabled>Devam Et</button>
+            </div>
+          </section>
+
+          <!-- 2: Berber -->
+          <section class="step" data-step="2">
+            <h2>Berberinizi seçin</h2>
+            <p class="hint">Tercihiniz yoksa "Fark etmez" seçeneğiyle en erken boş saati görürsünüz.</p>
+            <div class="choice-grid" id="barber-list"></div>
+            <div class="step-actions">
+              <button class="btn btn-dark" data-back>Geri</button>
+              <button class="btn btn-gold" id="next-2">Devam Et</button>
+            </div>
+          </section>
+
+          <!-- 3: Tarih & Saat -->
+          <section class="step" data-step="3">
+            <h2>Tarih ve saat</h2>
+            <p class="hint">Uygun günler açık renkle gösterilir. Gün seçince boş saatler listelenir.</p>
+            <div class="calendar">
+              <div class="cal-head">
+                <button class="cal-nav" id="cal-prev" aria-label="Önceki ay"></button>
+                <b id="cal-title"></b>
+                <button class="cal-nav" id="cal-next" aria-label="Sonraki ay"></button>
+              </div>
+              <div class="cal-grid" id="cal-grid"></div>
+            </div>
+            <div class="slots-title"><span id="slots-label">Önce bir gün seçin</span><span id="slots-count"></span></div>
+            <div class="slots" id="slots"></div>
+            <div class="step-actions">
+              <button class="btn btn-dark" data-back>Geri</button>
+              <button class="btn btn-gold" id="next-3" disabled>Devam Et</button>
+            </div>
+          </section>
+
+          <!-- 4: Bilgiler -->
+          <section class="step" data-step="4">
+            <h2>İletişim bilgileriniz</h2>
+            <p class="hint">Randevu hatırlatması ve olası değişiklikler için kullanılır.</p>
+            <form class="form-grid" id="info-form" novalidate>
+              <div class="field">
+                <label for="f-name">Ad Soyad</label>
+                <input id="f-name" name="name" autocomplete="name" placeholder="Adınız Soyadınız" required>
+                <span class="error">Lütfen adınızı girin.</span>
+              </div>
+              <div class="field">
+                <label for="f-phone">Telefon</label>
+                <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="05xx xxx xx xx" required>
+                <span class="error">Geçerli bir telefon numarası girin.</span>
+              </div>
+              <div class="field full">
+                <label for="f-note">Not (isteğe bağlı)</label>
+                <textarea id="f-note" name="note" placeholder="Özel bir isteğiniz varsa yazabilirsiniz."></textarea>
+              </div>
+              <label class="checkbox full">
+                <input type="checkbox" id="f-consent" required>
+                <span>Randevu bilgilerimin iletişim amacıyla işlenmesini kabul ediyorum.</span>
+              </label>
+            </form>
+            <div class="step-actions">
+              <button class="btn btn-dark" data-back>Geri</button>
+              <button class="btn btn-gold" id="next-4">Devam Et</button>
+            </div>
+          </section>
+
+          <!-- 5: Onay -->
+          <section class="step" data-step="5">
+            <div id="confirm-view">
+              <h2>Bilgileri kontrol edin</h2>
+              <p class="hint">Her şey doğruysa randevunuzu onaylayın.</p>
+              <div class="detail-grid" id="confirm-details"></div>
+              <div class="notice" style="margin-top:22px" id="confirm-notice"></div>
+              <div class="step-actions">
+                <button class="btn btn-dark" data-back>Geri</button>
+                <button class="btn btn-gold btn-lg" id="confirm-btn">Randevuyu Onayla</button>
+              </div>
+            </div>
+            <div id="success-view" class="success" style="display:none"></div>
+          </section>
+
+        </div>
+
+        <aside class="panel summary" id="summary">
+          <h3>Randevu Özeti</h3>
+          <div class="summary-row"><span>Hizmet</span><span id="s-services">—</span></div>
+          <div class="summary-row"><span>Berber</span><span id="s-barber">—</span></div>
+          <div class="summary-row"><span>Tarih</span><span id="s-date">—</span></div>
+          <div class="summary-row"><span>Saat</span><span id="s-time">—</span></div>
+          <div class="summary-row"><span>Süre</span><span id="s-duration">—</span></div>
+          <div class="summary-total"><span>Toplam</span><b id="s-total">0 ₺</b></div>
+          <p class="summary-note">Ödeme salonda yapılır. Randevunuzu değiştirmek ya da iptal etmek için en az 2 saat önceden bize ulaşmanız yeterli.</p>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-host"></div>
+  <div class="toast" id="toast"></div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/booking.js"></script>
+</body>
+</html>
