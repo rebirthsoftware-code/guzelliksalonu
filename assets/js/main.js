@@ -52,7 +52,7 @@
 
   /* ---------- Ortak parçalar ---------- */
   function renderNav(active) {
-    const home = document.getElementById("hero") ? "" : "index.html";
+    const home = document.getElementById("hero") ? "" : "./";
     const links = [
       [home + "#hizmetler", "Hizmetler"],
       [home + "#hakkimizda", "Hakkımızda"],
@@ -63,7 +63,7 @@
     return `
       <nav class="nav" id="nav">
         <div class="container">
-          <a class="logo" href="index.html">
+          <a class="logo" href="./">
             <span class="logo-mark">${I.logo}</span>
             <span class="logo-text">${esc(CFG.brand.name)}<small>${esc(CFG.brand.subtitle)}</small></span>
           </a>
@@ -86,7 +86,7 @@
         <div class="container">
           <div class="footer-grid">
             <div>
-              <a class="logo" href="index.html">
+              <a class="logo" href="./">
                 <span class="logo-mark">${I.logo}</span>
                 <span class="logo-text">${esc(CFG.brand.name)}<small>${esc(CFG.brand.subtitle)}</small></span>
               </a>
@@ -101,7 +101,7 @@
             <div>
               <h4>Sayfalar</h4>
               <ul>
-                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="./">Ana Sayfa</a></li>
                 <li><a href="index.html#hizmetler">Hizmetler</a></li>
                 <li><a href="index.html#ekip">Ekibimiz</a></li>
                 <li><a href="index.html#galeri">Galeri</a></li>

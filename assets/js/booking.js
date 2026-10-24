@@ -267,7 +267,7 @@
         <a class="btn btn-ghost" href="${gcalFor(a)}" target="_blank" rel="noopener">${I.calendar} Google Takvim</a>
         <a class="btn btn-ghost" href="${icsFor(a)}" download="randevu-${a.code}.ics">${I.download} Takvime Ekle (.ics)</a>
       </div>
-      <a class="btn btn-dark btn-sm" href="index.html">Ana Sayfaya Dön</a>`;
+      <a class="btn btn-dark btn-sm" href="./">Ana Sayfaya Dön</a>`;
     document.querySelectorAll(".step-dot").forEach((d) => d.classList.add("done"));
     window.scrollTo({ top: $("stepper").offsetTop - 100, behavior: "smooth" });
   }
