@@ -52,12 +52,13 @@
 
   /* ---------- Ortak parçalar ---------- */
   function renderNav(active) {
+    const home = document.getElementById("hero") ? "" : "index.html";
     const links = [
-      ["index.html#hizmetler", "Hizmetler"],
-      ["index.html#hakkimizda", "Hakkımızda"],
-      ["index.html#ekip", "Ekibimiz"],
-      ["index.html#galeri", "Galeri"],
-      ["index.html#iletisim", "İletişim"],
+      [home + "#hizmetler", "Hizmetler"],
+      [home + "#hakkimizda", "Hakkımızda"],
+      [home + "#ekip", "Ekibimiz"],
+      [home + "#galeri", "Galeri"],
+      [home + "#iletisim", "İletişim"],
     ];
     return `
       <nav class="nav" id="nav">

@@ -12,6 +12,13 @@
 
   const state = { range: "today", date: Util.toDateStr(new Date()), barber: "", status: "", q: "", view: "list", all: [], current: null };
 
+  /* Yerleşik confirm() yerine: ilk tıklama uyarır, 4 sn içinde ikinci tıklama onaylar. */
+  function confirmTwice(btn, label, fn) {
+    if (btn.dataset.armed) { clearTimeout(btn._t); delete btn.dataset.armed; btn.textContent = btn.dataset.orig; fn(); return; }
+    btn.dataset.orig = btn.textContent; btn.dataset.armed = "1"; btn.textContent = label;
+    btn._t = setTimeout(() => { delete btn.dataset.armed; btn.textContent = btn.dataset.orig; }, 4000);
+  }
+
   function toast(msg, err) {
     const t = $("toast");
     t.textContent = msg; t.classList.toggle("err", !!err); t.classList.add("show");
@@ -177,7 +184,6 @@
 
   async function remove() {
     const a = state.current; if (!a) return;
-    if (!window.confirm(`${a.name} adlı misafirin ${a.date} ${a.time} randevusu silinsin mi?`)) return;
     try {
       await Store.remove(a.id);
       state.all = state.all.filter((x) => x.id !== a.id);
@@ -199,7 +205,6 @@
   /* ---------- Demo veri ---------- */
   async function seedDemo() {
     if (Store.mode === "remote") return toast("Demo veri yalnızca yerel modda eklenir.", true);
-    if (!window.confirm("Bugün ve yarın için örnek randevular eklensin mi?")) return;
     const names = ["Ayşe Yılmaz", "Fatma Kaya", "Zeynep Demir", "Elif Çelik", "Merve Aslan", "Esra Şahin", "Gizem Koç", "Büşra Arslan", "Seda Doğan", "Nazlı Kurt"];
     const statuses = ["beklemede", "onaylandi", "onaylandi", "tamamlandi"];
     const d0 = new Date(); const d1 = new Date(); d1.setDate(d1.getDate() + 1);
@@ -252,10 +257,10 @@
     }));
     $("btn-refresh").addEventListener("click", load);
     $("btn-export").addEventListener("click", exportCsv);
-    $("btn-demo").addEventListener("click", seedDemo);
+    $("btn-demo").addEventListener("click", () => confirmTwice($("btn-demo"), "Emin misiniz? Tekrar tıklayın", seedDemo));
     $("btn-logout").addEventListener("click", () => { sessionStorage.removeItem(SESSION_KEY); location.reload(); });
     $("m-close").addEventListener("click", closeModal);
-    $("m-delete").addEventListener("click", remove);
+    $("m-delete").addEventListener("click", () => confirmTwice($("m-delete"), "Silinsin mi? Tekrar tıklayın", remove));
     $("modal").addEventListener("click", (e) => e.target === $("modal") && closeModal());
     document.addEventListener("keydown", (e) => e.key === "Escape" && closeModal());
     load();

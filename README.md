@@ -54,8 +54,9 @@ Tüm içerik tek dosyadan yönetilir: [`assets/js/config.js`](assets/js/config.j
 Kullanılabilir hizmet ikonları: `dryer`, `scissors`, `drop`, `sparkle`, `nail`, `spa`,
 `flower`, `lash`, `brush`, `crown`.
 
-Fotoğraflar şu an Unsplash'ten örnek görsellerdir. Kendi fotoğraflarınızı
-`assets/img/` klasörüne koyup `config.js` içindeki adresleri değiştirmeniz yeterli.
+Fotoğraflar `assets/img/` klasöründedir ve şu an Unsplash'ten alınmış örnek görsellerdir.
+Kendi fotoğraflarınızı aynı adlarla bu klasöre koymanız yeterli; farklı ad kullanırsanız
+`config.js` içindeki adresleri güncelleyin.
 
 ## Randevu Verileri Nerede Tutulur?
 
