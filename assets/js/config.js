@@ -13,7 +13,7 @@ window.SITE_CONFIG = {
     since: 2014,
     tagline: "Kendinize ayırdığınız en özel zaman.",
     description:
-      "Yalnızca kadınlara hizmet veren salonumuzda saç tasarımından cilt bakımına, " +
+      "Salonumuzda saç tasarımından cilt bakımına, " +
       "tırnak sanatından gelin hazırlığına kadar her detayı sizin için özenle planlıyoruz. " +
       "Amacımız sadece güzel görünmeniz değil, kendinizi iyi hissederek ayrılmanız.",
   },
@@ -129,7 +129,7 @@ window.SITE_CONFIG = {
   reviews: [
     { name: "Ayşe K.", text: "Balyajımı Selin Hanım yaptı, tam istediğim ton. Saçım hiç yıpranmadı, üstelik randevuya zamanında alındım. Artık başka yere gitmiyorum.", rating: 5 },
     { name: "Zeynep T.", text: "Düğünümde gelin paketini aldım; deneme gününden itibaren her şey çok profesyoneldi. Makyajım gece boyunca bozulmadı.", rating: 5 },
-    { name: "Elif M.", text: "Cilt bakımından sonra cildim resmen nefes aldı. Salon çok ferah ve temiz, kadınlara özel olması da beni rahat hissettiriyor.", rating: 5 },
+    { name: "Elif M.", text: "Cilt bakımından sonra cildim resmen nefes aldı. Salon çok ferah ve temiz, kahve ikramıyla kendimi evimde gibi hissediyorum.", rating: 5 },
   ],
 
   /* -----------------------------------------------------------------------

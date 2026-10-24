@@ -1,4 +1,4 @@
-# ELARA — Kadınlara Özel Güzellik Salonu Web Sitesi & Randevu Sistemi
+# ELARA — Güzellik Salonu Web Sitesi & Randevu Sistemi
 
 Güzellik salonları için tasarlanmış, **GitHub Pages üzerinde ücretsiz çalışan**
 web sitesi ve online randevu sistemi. Sunucu, veritabanı ya da hosting gerektirmez;

@@ -123,7 +123,7 @@
             </div>
           </div>
           <div class="footer-bottom">
-            <span>© <span id="year"></span> ${esc(CFG.brand.name)} ${esc(CFG.brand.subtitle)}. Kadınlara özel hizmet verilir. Tüm hakları saklıdır.</span>
+            <span>© <span id="year"></span> ${esc(CFG.brand.name)} ${esc(CFG.brand.subtitle)}. Tüm hakları saklıdır.</span>
             <span><a href="yonetim.html" style="opacity:.6">Yönetim</a> · Tasarım &amp; Geliştirme: <a href="https://github.com/rebirthsoftware-code" target="_blank" rel="noopener">rebirthsoftware</a></span>
           </div>
         </div>
