@@ -14,7 +14,7 @@
     barberId: null,       // null = fark etmez
     date: null,
     time: null,
-    freeBarbers: [],      // seçili saatte boş olan berberler
+    freeBarbers: [],      // seçili saatte boş olan uzmanlar
     calYear: null,
     calMonth: null,
     name: "", phone: "", note: "",
@@ -66,13 +66,13 @@
     $("next-1").disabled = state.services.length === 0;
   }
 
-  /* ---------- 2. Berber ---------- */
+  /* ---------- 2. Uzman ---------- */
   function renderBarbers() {
     const any = `
       <button type="button" class="choice ${state.barberId === null ? "selected" : ""}" data-id="">
         <span class="check">${I.check}</span>
         <span class="avatar-any">${I.users}</span>
-        <span class="choice-body"><b>Fark etmez</b><small>İlk müsait usta ile en erken saat</small></span>
+        <span class="choice-body"><b>Fark etmez</b><small>İlk müsait uzman ile en erken saat</small></span>
       </button>`;
     $("barber-list").innerHTML = any + CFG.team.map((t) => `
       <button type="button" class="choice ${state.barberId === t.id ? "selected" : ""}" data-id="${t.id}">
@@ -138,7 +138,7 @@
     $("slots-label").textContent = Util.dateLabel(state.date);
     $("slots-count").textContent = slots.length ? `${slots.length} uygun saat` : "";
     if (!slots.length) {
-      $("slots").innerHTML = `<div class="slots-empty" style="grid-column:1/-1">Bu gün için uygun saat kalmadı. Lütfen başka bir gün ya da berber seçin.</div>`;
+      $("slots").innerHTML = `<div class="slots-empty" style="grid-column:1/-1">Bu gün için uygun saat kalmadı. Lütfen başka bir gün ya da uzman seçin.</div>`;
       $("next-3").disabled = true; return;
     }
     $("slots").innerHTML = slots.map((s) => `<button type="button" class="slot ${s.time === state.time ? "selected" : ""}" data-time="${s.time}" data-barbers="${s.barbers.join(",")}">${s.time}</button>`).join("");
@@ -176,7 +176,7 @@
     const b = assignedBarber();
     $("confirm-details").innerHTML = `
       <div class="full"><span>Hizmetler</span>${state.services.map((id) => esc(Util.serviceById(id).name)).join(", ")}</div>
-      <div><span>Berber</span>${b ? esc(b.name) : "İlk müsait usta"}${!state.barberId ? ' <small style="color:var(--muted)">(otomatik atandı)</small>' : ""}</div>
+      <div><span>Uzman</span>${b ? esc(b.name) : "İlk müsait uzman"}${!state.barberId ? ' <small style="color:var(--muted)">(otomatik atandı)</small>' : ""}</div>
       <div><span>Tarih</span>${Util.dateLabel(state.date)}</div>
       <div><span>Saat</span>${state.time} – ${Util.addMinutes(state.time, totalDuration())}</div>
       <div><span>Süre</span>${totalDuration()} dk</div>
@@ -230,7 +230,7 @@
       "UID:" + a.id + "@" + location.hostname, "DTSTAMP:" + new Date().toISOString().replace(/[-:]/g, "").split(".")[0] + "Z",
       "DTSTART;TZID=Europe/Istanbul:" + start, "DTEND;TZID=Europe/Istanbul:" + end,
       "SUMMARY:" + CFG.brand.name + " – " + a.serviceNames,
-      "DESCRIPTION:Berber: " + a.barberName + "\\nOnay kodu: " + a.code,
+      "DESCRIPTION:Uzman: " + a.barberName + "\\nOnay kodu: " + a.code,
       "LOCATION:" + CFG.contact.address.replace(/,/g, "\\,"),
       "END:VEVENT", "END:VCALENDAR",
     ];
@@ -245,14 +245,14 @@
     u.searchParams.set("text", `${CFG.brand.name} – ${a.serviceNames}`);
     u.searchParams.set("dates", `${s}/${e}`);
     u.searchParams.set("ctz", "Europe/Istanbul");
-    u.searchParams.set("details", `Berber: ${a.barberName}\nOnay kodu: ${a.code}`);
+    u.searchParams.set("details", `Uzman: ${a.barberName}\nOnay kodu: ${a.code}`);
     u.searchParams.set("location", CFG.contact.address);
     return u.toString();
   }
 
   function renderSuccess(a) {
     const msg = `Merhaba, ${CFG.brand.name} için randevu oluşturdum.\n` +
-      `Onay kodu: ${a.code}\nAd: ${a.name}\nHizmet: ${a.serviceNames}\nBerber: ${a.barberName}\n` +
+      `Onay kodu: ${a.code}\nAd: ${a.name}\nHizmet: ${a.serviceNames}\nUzman: ${a.barberName}\n` +
       `Tarih: ${Util.dateLabel(a.date, { day: "numeric", month: "long", weekday: "long" })} ${a.time}`;
     $("confirm-view").style.display = "none";
     const v = $("success-view");
@@ -260,7 +260,7 @@
     v.innerHTML = `
       <div class="ok">${I.check}</div>
       <h2>Randevunuz alındı!</h2>
-      <p class="lead" style="text-align:center">${esc(a.name)}, <b>${Util.dateLabel(a.date, { day: "numeric", month: "long", weekday: "long" })}</b> günü saat <b>${a.time}</b>'de <b>${esc(a.barberName)}</b> sizi bekliyor.</p>
+      <p class="lead" style="text-align:center">${esc(a.name)}, <b>${Util.dateLabel(a.date, { day: "numeric", month: "long", weekday: "long" })}</b> günü saat <b>${a.time}</b>'de <b>${esc(a.barberName)}</b> sizi ağırlamaktan mutluluk duyacak.</p>
       <div class="code" title="Onay kodu">${a.code}</div>
       <div class="success-actions">
         <a class="btn btn-wa" href="${UI.waLink(msg)}" target="_blank" rel="noopener">${I.whatsapp} WhatsApp ile Bildir</a>

@@ -1,6 +1,6 @@
-# EFENDİ — Erkek Kuaförü Web Sitesi & Randevu Sistemi
+# ELARA — Kadınlara Özel Güzellik Salonu Web Sitesi & Randevu Sistemi
 
-Erkek berberleri için tasarlanmış, **GitHub Pages üzerinde ücretsiz çalışan**
+Güzellik salonları için tasarlanmış, **GitHub Pages üzerinde ücretsiz çalışan**
 web sitesi ve online randevu sistemi. Sunucu, veritabanı ya da hosting gerektirmez;
 tüm site statik HTML/CSS/JS dosyalarından oluşur.
 
@@ -8,21 +8,21 @@ tüm site statik HTML/CSS/JS dosyalarından oluşur.
 
 **Web sitesi (`index.html`)**
 - Tam ekran hero, istatistikler, kayan bant
-- Hizmetler ve fiyat listesi, hakkımızda, deneyim bandı
-- Ekip kartları, galeri, müşteri yorumları, çalışma saatleri
+- Hizmetler ve fiyat listesi (saç, renk, keratin, manikür & pedikür, cilt bakımı, kaş & kirpik, makyaj, gelin paketi)
+- Hakkımızda, deneyim bandı, uzman ekip kartları, galeri, misafir yorumları, çalışma saatleri
 - Sabit WhatsApp butonu, mobil uyumlu menü, kaydırma animasyonları
 
 **Randevu sistemi (`randevu.html`)**
-- 5 adımlı akış: hizmet(ler) → berber → tarih & saat → bilgiler → onay
+- 5 adımlı akış: hizmet(ler) → uzman → tarih & saat → bilgiler → onay
 - Çalışma saatlerine, tatil günlerine ve mevcut randevulara göre **gerçek boş saat hesaplama**
-- "Fark etmez" seçeneğiyle ilk müsait berberin otomatik atanması
+- "Fark etmez" seçeneğiyle ilk müsait uzmanın otomatik atanması
 - Onay kodu, WhatsApp ile bildirim, Google Takvim ve .ics dosyası
 
 **Yönetim paneli (`yonetim.html`)**
 - PIN ile giriş
-- Günlük / haftalık liste ve berber bazlı **zaman çizelgesi** görünümü
+- Günlük / haftalık liste ve uzman bazlı **zaman çizelgesi** görünümü
 - Durum yönetimi (beklemede, onaylandı, tamamlandı, iptal), arama, filtre
-- Müşteriye tek tıkla WhatsApp mesajı, CSV dışa aktarma
+- Misafire tek tıkla WhatsApp mesajı, CSV dışa aktarma
 
 ## Hızlı Başlangıç
 
@@ -46,10 +46,13 @@ Tüm içerik tek dosyadan yönetilir: [`assets/js/config.js`](assets/js/config.j
 | `holidays` | Randevuya kapalı özel günler |
 | `booking` | Saat dilimi aralığı, kaç gün ileriye randevu alınabileceği, en az kaç dakika sonrası |
 | `services` | Hizmet adı, fiyat, süre, açıklama, ikon |
-| `team` | Berberler, fotoğraf, unvan, deneyim |
+| `team` | Uzmanlar, fotoğraf, unvan, deneyim |
 | `gallery`, `reviews`, `stats` | Galeri görselleri, yorumlar, sayılar |
 | `admin.pin` | Yönetim paneli PIN kodu |
 | `api` | Google Sheets arka ucu adresi (aşağıya bakın) |
+
+Kullanılabilir hizmet ikonları: `dryer`, `scissors`, `drop`, `sparkle`, `nail`, `spa`,
+`flower`, `lash`, `brush`, `crown`.
 
 Fotoğraflar şu an Unsplash'ten örnek görsellerdir. Kendi fotoğraflarınızı
 `assets/img/` klasörüne koyup `config.js` içindeki adresleri değiştirmeniz yeterli.
@@ -58,7 +61,7 @@ Fotoğraflar şu an Unsplash'ten örnek görsellerdir. Kendi fotoğraflarınız�
 
 | Mod | Nasıl? | Ne zaman? |
 | --- | --- | --- |
-| **Yerel** (varsayılan) | Tarayıcının hafızasında (`localStorage`). Müşteri randevu alır, WhatsApp ile salona bildirir. | Demo, tanıtım, tek cihaz |
+| **Yerel** (varsayılan) | Tarayıcının hafızasında (`localStorage`). Misafir randevu alır, WhatsApp ile salona bildirir. | Demo, tanıtım, tek cihaz |
 | **Google Sheets** | `api.url` doluysa randevular Google Apps Script üzerinden bir Sheets tablosuna yazılır. Tüm cihazlardan görünür, çakışma kontrolü sunucuda yapılır. | Gerçek kullanım |
 
 Google Sheets kurulumu 5 dakika sürer ve ücretsizdir:

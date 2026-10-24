@@ -7,7 +7,7 @@
   const I = window.ICONS;
   const esc = Util.escape;
   const $ = (id) => document.getElementById(id);
-  const SESSION_KEY = "efendi.admin.ok";
+  const SESSION_KEY = "elara.admin.ok";
   const STATUS = { beklemede: "Beklemede", onaylandi: "Onaylandı", tamamlandi: "Tamamlandı", iptal: "İptal" };
 
   const state = { range: "today", date: Util.toDateStr(new Date()), barber: "", status: "", q: "", view: "list", all: [], current: null };
@@ -97,7 +97,7 @@
     if (!list.length) return `<div class="table-wrap"><div class="empty">${I.calendar}<b>Randevu bulunamadı</b><span>Seçili tarih ve filtrelerde kayıt yok.</span></div></div>`;
     const showDate = state.range === "all" || state.range === "week";
     return `<div class="table-wrap"><table class="appts">
-      <thead><tr><th>Saat</th><th>Müşteri</th><th>Hizmet</th><th>Berber</th><th>Ücret</th><th>Durum</th><th></th></tr></thead>
+      <thead><tr><th>Saat</th><th>Misafir</th><th>Hizmet</th><th>Uzman</th><th>Ücret</th><th>Durum</th><th></th></tr></thead>
       <tbody>${list.map((a) => `
         <tr data-open="${a.id}" style="cursor:pointer">
           <td><span class="t-time">${a.time}${showDate ? `<small>${Util.dateLabel(a.date, { day: "numeric", month: "short", weekday: "short" })}</small>` : `<small>${a.duration} dk</small>`}</span></td>
@@ -151,7 +151,7 @@
       <div><span>Tarih</span>${Util.dateLabel(a.date)}</div>
       <div><span>Saat</span>${a.time} – ${Util.addMinutes(a.time, a.duration)} (${a.duration} dk)</div>
       <div class="full"><span>Hizmetler</span>${esc(a.serviceNames)}</div>
-      <div><span>Berber</span>${esc(a.barberName)}</div>
+      <div><span>Uzman</span>${esc(a.barberName)}</div>
       <div><span>Ücret</span>${Util.money(a.price || 0)}</div>
       <div><span>Telefon</span><a href="tel:${esc(a.phone.replace(/\s/g, ""))}" style="color:var(--gold-2)">${esc(a.phone)}</a></div>
       <div><span>Oluşturulma</span>${new Date(a.createdAt).toLocaleString("tr-TR")}</div>
@@ -177,7 +177,7 @@
 
   async function remove() {
     const a = state.current; if (!a) return;
-    if (!window.confirm(`${a.name} adlı müşterinin ${a.date} ${a.time} randevusu silinsin mi?`)) return;
+    if (!window.confirm(`${a.name} adlı misafirin ${a.date} ${a.time} randevusu silinsin mi?`)) return;
     try {
       await Store.remove(a.id);
       state.all = state.all.filter((x) => x.id !== a.id);
@@ -187,7 +187,7 @@
 
   /* ---------- Dışa aktar ---------- */
   function exportCsv() {
-    const rows = [["Kod", "Tarih", "Saat", "Süre (dk)", "Müşteri", "Telefon", "Hizmetler", "Berber", "Ücret", "Durum", "Not", "Oluşturulma"]];
+    const rows = [["Kod", "Tarih", "Saat", "Süre (dk)", "Misafir", "Telefon", "Hizmetler", "Uzman", "Ücret", "Durum", "Not", "Oluşturulma"]];
     filtered().forEach((a) => rows.push([a.code, a.date, a.time, a.duration, a.name, a.phone, a.serviceNames, a.barberName, a.price, STATUS[a.status], a.note || "", a.createdAt]));
     const csv = "﻿" + rows.map((r) => r.map((v) => `"${String(v ?? "").replace(/"/g, '""')}"`).join(";")).join("\r\n");
     const a = document.createElement("a");
@@ -200,7 +200,7 @@
   async function seedDemo() {
     if (Store.mode === "remote") return toast("Demo veri yalnızca yerel modda eklenir.", true);
     if (!window.confirm("Bugün ve yarın için örnek randevular eklensin mi?")) return;
-    const names = ["Ahmet Yılmaz", "Mehmet Kaya", "Serkan Demir", "Oğuzhan Çelik", "Burak Aslan", "Emre Şahin", "Kerem Koç", "Yusuf Arslan", "Hakan Doğan", "Murat Kurt"];
+    const names = ["Ayşe Yılmaz", "Fatma Kaya", "Zeynep Demir", "Elif Çelik", "Merve Aslan", "Esra Şahin", "Gizem Koç", "Büşra Arslan", "Seda Doğan", "Nazlı Kurt"];
     const statuses = ["beklemede", "onaylandi", "onaylandi", "tamamlandi"];
     const d0 = new Date(); const d1 = new Date(); d1.setDate(d1.getDate() + 1);
     for (const d of [d0, d1]) {

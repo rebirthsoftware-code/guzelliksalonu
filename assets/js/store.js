@@ -9,7 +9,7 @@
 
 (function () {
   const CFG = window.SITE_CONFIG;
-  const KEY = "efendi.randevular.v1";
+  const KEY = "elara.randevular.v1";
 
   const pad = (n) => String(n).padStart(2, "0");
 

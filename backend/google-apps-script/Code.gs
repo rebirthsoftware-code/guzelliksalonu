@@ -1,5 +1,5 @@
 /**
- * EFENDİ Randevu Sistemi — Google Apps Script Arka Ucu
+ * ELARA Randevu Sistemi — Google Apps Script Arka Ucu
  * ------------------------------------------------------------------------
  * Randevuları bir Google Sheets tablosunda saklar. Site GitHub Pages gibi
  * statik bir ortamda çalıştığı için sunucu tarafı kodu burada yaşar.
@@ -101,7 +101,7 @@ function doPost(e) {
       var a = body.appointment || {};
       if (!a.id || !a.date || !a.time || !a.barberId) return out_({ ok: false, error: "Eksik alan" });
 
-      // Çakışma kontrolü: aynı berber, aynı gün, kesişen saat aralığı
+      // Çakışma kontrolü: aynı uzman, aynı gün, kesişen saat aralığı
       var s1 = toMin_(a.time), e1 = s1 + Number(a.duration || 0);
       var clash = readAll_().some(function (x) {
         if (x.date !== a.date || x.barberId !== a.barberId || x.status === "iptal") return false;

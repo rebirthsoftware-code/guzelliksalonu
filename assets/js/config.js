@@ -8,53 +8,53 @@
 
 window.SITE_CONFIG = {
   brand: {
-    name: "EFENDİ",
-    subtitle: "Erkek Kuaförü & Barber",
-    since: 2012,
-    tagline: "Sıradan bir tıraş değil, kendinize ayırdığınız en değerli zaman.",
+    name: "ELARA",
+    subtitle: "Güzellik & Bakım Salonu",
+    since: 2014,
+    tagline: "Kendinize ayırdığınız en özel zaman.",
     description:
-      "Klasik berberlik geleneğini modern erkek bakımıyla buluşturuyoruz. " +
-      "Ustura tıraşından fade kesime, sakal tasarımından cilt bakımına kadar " +
-      "her detayı sizin için özenle planlıyoruz.",
+      "Yalnızca kadınlara hizmet veren salonumuzda saç tasarımından cilt bakımına, " +
+      "tırnak sanatından gelin hazırlığına kadar her detayı sizin için özenle planlıyoruz. " +
+      "Amacımız sadece güzel görünmeniz değil, kendinizi iyi hissederek ayrılmanız.",
   },
 
   contact: {
     phone: "+90 (555) 000 00 00",
     whatsapp: "905550000000",          // Sadece rakam, ülke koduyla. Randevu mesajı buraya gider.
-    email: "info@efendibarber.com",
-    address: "Cumhuriyet Cad. No: 12/A, Kadıköy / İstanbul",
-    mapUrl: "https://maps.google.com/?q=Kadıköy+İstanbul",
+    email: "info@elaraguzellik.com",
+    address: "Bağdat Cad. No: 48/B, Kadıköy / İstanbul",
+    mapUrl: "https://maps.google.com/?q=Bağdat+Caddesi+Kadıköy+İstanbul",
     instagram: "https://instagram.com/",
     youtube: "https://youtube.com/",
     tiktok: "https://tiktok.com/",
   },
 
   stats: [
-    { value: "10K+", label: "Mutlu Müşteri" },
-    { value: "14",   label: "Yıl Deneyim" },
-    { value: "6",    label: "Usta Berber" },
+    { value: "15K+", label: "Mutlu Misafir" },
+    { value: "12",   label: "Yıl Deneyim" },
+    { value: "6",    label: "Uzman Ekip" },
     { value: "4.9",  label: "Google Puanı" },
   ],
 
   marquee: [
-    "ERKEK BAKIMI", "KLASİK USTURA", "MODERN KESİM", "SAKAL TASARIMI",
-    "DAMAT TIRAŞI", "CİLT BAKIMI", "ÇOCUK KESİMİ", "PREMIUM DENEYİM",
+    "SAÇ TASARIMI", "BALYAJ & RENK", "KERATİN BAKIMI", "MANİKÜR & PEDİKÜR",
+    "CİLT BAKIMI", "KAŞ & KİRPİK", "GELİN PAKETİ", "PROFESYONEL MAKYAJ",
   ],
 
   /* Çalışma saatleri. Haftanın günleri: 0 = Pazar ... 6 = Cumartesi.
      closed: true olan gün randevuya kapalıdır. */
   hours: {
-    1: { open: "09:00", close: "21:00" },
-    2: { open: "09:00", close: "21:00" },
-    3: { open: "09:00", close: "21:00" },
-    4: { open: "09:00", close: "21:00" },
-    5: { open: "09:00", close: "21:00" },
-    6: { open: "09:00", close: "20:00" },
+    1: { open: "09:30", close: "20:00" },
+    2: { open: "09:30", close: "20:00" },
+    3: { open: "09:30", close: "20:00" },
+    4: { open: "09:30", close: "20:00" },
+    5: { open: "09:30", close: "20:00" },
+    6: { open: "09:30", close: "19:00" },
     0: { closed: true },
   },
   hoursLabel: [
-    { days: "Pazartesi – Cuma", time: "09:00 – 21:00" },
-    { days: "Cumartesi",        time: "09:00 – 20:00" },
+    { days: "Pazartesi – Cuma", time: "09:30 – 20:00" },
+    { days: "Cumartesi",        time: "09:30 – 19:00" },
     { days: "Pazar",            time: "Kapalı" },
   ],
 
@@ -69,65 +69,65 @@ window.SITE_CONFIG = {
   },
 
   services: [
-    { id: "sac",      name: "Saç Kesimi",            price: 700,  duration: 45, icon: "scissors",
-      desc: "Yüz hatlarınıza ve stilinize uygun, makas ve makine ile hassas kesim. Yıkama ve fön dahildir." },
-    { id: "sac-sakal",name: "Saç & Sakal",           price: 900,  duration: 60, icon: "razor", featured: true,
-      desc: "Saç kesimi ile birlikte sakal şekillendirme ve sıcak havlu ile ustura kontür temizliği." },
-    { id: "sakal",    name: "Sakal Şekillendirme",   price: 350,  duration: 25, icon: "beard",
-      desc: "Sakalınızın yoğunluğuna göre tasarlanan form, ustura ile hat ve sıcak havlu uygulaması." },
-    { id: "ustura",   name: "Klasik Ustura Tıraşı",  price: 450,  duration: 30, icon: "razor",
-      desc: "Sıcak havlu, köpük ve ustura ile geleneksel yöntemle pürüzsüz bir tıraş." },
-    { id: "cilt",     name: "Cilt Bakımı",           price: 600,  duration: 40, icon: "spa",
-      desc: "Siyah nokta temizliği, buhar, maske ve nemlendirme ile yüz bakımı." },
-    { id: "cocuk",    name: "Çocuk Kesimi",          price: 450,  duration: 30, icon: "child",
-      desc: "12 yaş altı küçük beyler için sabırlı ve eğlenceli bir kesim deneyimi." },
-    { id: "damat",    name: "Damat Paketi",          price: 5000, duration: 150, icon: "crown",
-      desc: "Saç, sakal, cilt bakımı, kaş düzeltme, ağda ve masaj. Büyük gününüze özel tam bakım." },
-    { id: "boya",     name: "Saç / Sakal Boyama",    price: 800,  duration: 60, icon: "drop",
-      desc: "Beyazları kapatma ya da doğal ton geçişleri için profesyonel boyama." },
+    { id: "sac-fon",   name: "Saç Kesimi & Fön",        price: 1200,  duration: 60,  icon: "dryer",
+      desc: "Yüz hatlarınıza ve yaşam tarzınıza uygun kesim, yıkama ve şekillendirici fön ile tamamlanır." },
+    { id: "boya",      name: "Saç Boyama & Balyaj",     price: 4500,  duration: 180, icon: "drop",
+      desc: "Dip boya, ombre, balyaj ya da tam renk değişimi. Saçınızı yıpratmayan profesyonel ürünlerle." },
+    { id: "keratin",   name: "Keratin & Botoks Bakımı", price: 5000,  duration: 150, icon: "sparkle",
+      desc: "Elektriklenmeyi ve kabarmayı önleyen, saça parlaklık ve yumuşaklık kazandıran yoğun bakım." },
+    { id: "manikur",   name: "Manikür & Pedikür",       price: 1500,  duration: 90,  icon: "nail",
+      desc: "Tırnak bakımı, şekillendirme, nasır ve kütikül temizliği. Dilerseniz kalıcı oje ile tamamlanır." },
+    { id: "cilt",      name: "Cilt Bakımı",             price: 2000,  duration: 60,  icon: "spa",
+      desc: "Cilt analizi sonrası derin temizlik, peeling, maske ve nemlendirme ile ışıltılı bir cilt." },
+    { id: "kas-kirpik",name: "Kaş & Kirpik Tasarımı",   price: 1200,  duration: 60,  icon: "lash",
+      desc: "Kaş laminasyon, kaş şekillendirme ve kirpik lifting ile bakışlarınızı belirginleştirin." },
+    { id: "makyaj",    name: "Profesyonel Makyaj",      price: 2500,  duration: 60,  icon: "brush",
+      desc: "Davet, nişan ve özel günleriniz için cilt tipinize ve kıyafetinize uygun kalıcı makyaj." },
+    { id: "gelin",     name: "Gelin Paketi",            price: 25000, duration: 300, icon: "crown", featured: true,
+      desc: "Deneme dahil gelin saçı ve makyajı, cilt bakımı, manikür ve kaş tasarımı. En özel gününüz için." },
   ],
 
   team: [
-    { id: "kerem", name: "Kerem Aydın",   role: "Kurucu & Usta Berber", exp: "20 yıl",
-      photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80",
-      skills: ["Klasik Ustura", "Damat Tıraşı"] },
-    { id: "burak", name: "Burak Şahin",   role: "Usta Berber",          exp: "12 yıl",
-      photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80",
-      skills: ["Fade Kesim", "Sakal Tasarımı"] },
-    { id: "emre",  name: "Emre Kaya",     role: "Saç Kesim Uzmanı",     exp: "8 yıl",
-      photo: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80",
-      skills: ["Modern Kesim", "Saç Boyama"] },
-    { id: "can",   name: "Can Yılmaz",    role: "Saç Kesim Uzmanı",     exp: "6 yıl",
-      photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
-      skills: ["Makas Kesim", "Çocuk Kesimi"] },
-    { id: "mert",  name: "Mert Demir",    role: "Cilt Bakım Uzmanı",    exp: "5 yıl",
-      photo: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&w=600&q=80",
-      skills: ["Cilt Bakımı", "Ağda & Kaş"] },
-    { id: "ali",   name: "Ali Koç",       role: "Baş Asistan",          exp: "3 yıl",
-      photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
-      skills: ["Yıkama & Fön", "Sakal Bakımı"] },
+    { id: "elif",   name: "Elif Yıldız",   role: "Kurucu & Saç Tasarımcısı", exp: "15 yıl",
+      photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80",
+      skills: ["Gelin Saçı", "Kesim & Fön"] },
+    { id: "selin",  name: "Selin Arslan",  role: "Renk Uzmanı",              exp: "10 yıl",
+      photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80",
+      skills: ["Balyaj", "Keratin Bakımı"] },
+    { id: "zeynep", name: "Zeynep Kaya",   role: "Cilt Bakım Uzmanı",        exp: "8 yıl",
+      photo: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=600&q=80",
+      skills: ["Cilt Bakımı", "Peeling"] },
+    { id: "merve",  name: "Merve Demir",   role: "Tırnak Tasarımcısı",       exp: "7 yıl",
+      photo: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80",
+      skills: ["Manikür & Pedikür", "Nail Art"] },
+    { id: "busra",  name: "Büşra Çelik",   role: "Kaş & Kirpik Uzmanı",      exp: "6 yıl",
+      photo: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?auto=format&fit=crop&w=600&q=80",
+      skills: ["Kaş Laminasyon", "Kirpik Lifting"] },
+    { id: "derya",  name: "Derya Aksoy",   role: "Makyaj Artisti",           exp: "9 yıl",
+      photo: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=600&q=80",
+      skills: ["Gelin Makyajı", "Davet Makyajı"] },
   ],
 
   gallery: [
-    { src: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=80", alt: "Ustura ile fade kontür" },
-    { src: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=80", alt: "Sakal şekillendirme" },
-    { src: "https://images.unsplash.com/photo-1536520002442-39764a41e987?auto=format&fit=crop&w=900&q=80", alt: "Salon içi" },
-    { src: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=900&q=80", alt: "Makine ile kesim" },
-    { src: "https://images.unsplash.com/photo-1532710093739-9470acff878f?auto=format&fit=crop&w=900&q=80", alt: "Klasik tıraş köpüğü" },
-    { src: "https://images.unsplash.com/photo-1562004760-aceed7bb0fe3?auto=format&fit=crop&w=900&q=80", alt: "Sonuç" },
-    { src: "https://images.unsplash.com/photo-1587909209111-5097ee578ec3?auto=format&fit=crop&w=900&q=80", alt: "Bakım ürünleri" },
-    { src: "https://images.unsplash.com/photo-1598524374912-6b0b0bab43dd?auto=format&fit=crop&w=900&q=80", alt: "Şekillendirme" },
+    { src: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=900&q=80", alt: "Fön ve şekillendirme" },
+    { src: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=900&q=80", alt: "Nail art" },
+    { src: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=900&q=80", alt: "Göz makyajı" },
+    { src: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80", alt: "Cilt bakımı" },
+    { src: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=900&q=80", alt: "Kaş tasarımı" },
+    { src: "https://images.unsplash.com/photo-1611042553365-9b101441c135?auto=format&fit=crop&w=900&q=80", alt: "Sonuç" },
+    { src: "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=900&q=80", alt: "Kalıcı oje" },
+    { src: "https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=900&q=80", alt: "Makyaj fırçaları" },
   ],
 
-  heroImage:  "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=2000&q=80",
-  aboutImage: "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=1200&q=80",
-  aboutImage2:"https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=80",
-  experienceImage: "https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=1600&q=80",
+  heroImage:  "https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=2000&q=80",
+  aboutImage: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1200&q=80",
+  aboutImage2:"https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=80",
+  experienceImage: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=80",
 
   reviews: [
-    { name: "Ahmet Y.", text: "Yıllardır başka yere gitmiyorum. Kerem Usta'nın ustura tıraşı bambaşka. Randevu sistemi de çok pratik, 1 dakikada hallediyorum.", rating: 5 },
-    { name: "Serkan D.", text: "Düğünümden önce damat paketini aldım, cilt bakımı ve masaj inanılmazdı. Fotoğraflarda fark hemen belli oldu.", rating: 5 },
-    { name: "Oğuzhan K.", text: "Temiz, şık ve zamanında. Burak'ın fade kesimi İstanbul'da en iyisi diyebilirim. Kahve ikramı da cabası.", rating: 5 },
+    { name: "Ayşe K.", text: "Balyajımı Selin Hanım yaptı, tam istediğim ton. Saçım hiç yıpranmadı, üstelik randevuya zamanında alındım. Artık başka yere gitmiyorum.", rating: 5 },
+    { name: "Zeynep T.", text: "Düğünümde gelin paketini aldım; deneme gününden itibaren her şey çok profesyoneldi. Makyajım gece boyunca bozulmadı.", rating: 5 },
+    { name: "Elif M.", text: "Cilt bakımından sonra cildim resmen nefes aldı. Salon çok ferah ve temiz, kadınlara özel olması da beni rahat hissettiriyor.", rating: 5 },
   ],
 
   /* -----------------------------------------------------------------------
@@ -145,6 +145,6 @@ window.SITE_CONFIG = {
   },
 
   admin: {
-    pin: "1979",                       // Yönetim paneli giriş PIN'i (yalnızca basit koruma sağlar)
+    pin: "2014",                       // Yönetim paneli giriş PIN'i (yalnızca basit koruma sağlar)
   },
 };

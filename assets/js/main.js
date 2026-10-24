@@ -38,7 +38,13 @@
     instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>',
     youtube: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12s0-4-.5-5.5a2.5 2.5 0 0 0-1.8-1.8C18.2 4.2 12 4.2 12 4.2s-6.2 0-7.7.5A2.5 2.5 0 0 0 2.5 6.5C2 8 2 12 2 12s0 4 .5 5.5a2.5 2.5 0 0 0 1.8 1.8c1.5.5 7.7.5 7.7.5s6.2 0 7.7-.5a2.5 2.5 0 0 0 1.8-1.8C22 16 22 12 22 12Z"/><path d="m10 9 5 3-5 3V9Z" fill="currentColor"/></svg>',
     tiktok: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.4 2.4 2 4 4.5 4.2v3.3a8 8 0 0 1-4.4-1.4v6.4a5.6 5.6 0 1 1-5.6-5.6c.3 0 .6 0 .9.1v3.4a2.3 2.3 0 1 0 1.4 2.1V3h3.2Z"/></svg>',
-    logo: '<svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="#c9a45c" stroke-width="1.5"/><circle cx="24" cy="24" r="18" stroke="#c9a45c" stroke-width=".8" opacity=".5"/><path d="M15 15l18 18M33 15 15 33" stroke="#e5c98a" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="34" r="3.2" stroke="#e5c98a" stroke-width="2"/><circle cx="34" cy="34" r="3.2" stroke="#e5c98a" stroke-width="2"/><circle cx="24" cy="24" r="2" fill="#e5c98a"/></svg>',
+    dryer: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a5 5 0 0 1 5-5h9l4-1v10l-4-1H8a5 5 0 0 1-5-5Z"/><path d="M9 14l-2 7h4l2-7"/><circle cx="8" cy="9" r="1.5"/></svg>',
+    nail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v4H9z"/><path d="M8 7h8v6a4 4 0 0 1-8 0V7Z"/><path d="M12 17v4M10 21h4"/></svg>',
+    sparkle: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c.6 4.2 2.8 6.4 7 7-4.2.6-6.4 2.8-7 7-.6-4.2-2.8-6.4-7-7 4.2-.6 6.4-2.8 7-7Z"/><path d="M19 15c.3 1.8 1.2 2.7 3 3-1.8.3-2.7 1.2-3 3-.3-1.8-1.2-2.7-3-3 1.8-.3 2.7-1.2 3-3Z"/></svg>',
+    lash: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 14c3-5 6.5-7.5 10-7.5S19 9 22 14"/><path d="M12 6.5V3M7.5 7.8 6 4.8M16.5 7.8 18 4.8M4.5 10.5 2.5 8M19.5 10.5l2-2.5"/><path d="M5 14c2 2.5 4.5 3.8 7 3.8s5-1.3 7-3.8"/></svg>',
+    brush: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m14 4 6 6-8 8-6-6 8-8Z"/><path d="M6 12 3.5 14.5a3.5 3.5 0 0 0 5 5L11 17"/><path d="m16 2 6 6"/></svg>',
+    flower: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.5"/><path d="M12 2c2 2.5 2 5 0 7.5C10 7 10 4.5 12 2ZM12 22c2-2.5 2-5 0-7.5-2 2.5-2 5 0 7.5ZM2 12c2.5-2 5-2 7.5 0-2.5 2-5 2-7.5 0ZM22 12c-2.5-2-5-2-7.5 0 2.5 2 5 2 7.5 0Z"/></svg>',
+    logo: '<svg viewBox="0 0 48 48" fill="none" stroke="currentColor"><circle cx="24" cy="24" r="22" stroke-width="1.5"/><circle cx="24" cy="24" r="18" stroke-width=".8" opacity=".5"/><path d="M24 11c3.2 4.2 3.2 8.4 0 12.6-3.2-4.2-3.2-8.4 0-12.6ZM24 37c3.2-4.2 3.2-8.4 0-12.6-3.2 4.2-3.2 8.4 0 12.6ZM11 24c4.2-3.2 8.4-3.2 12.6 0-4.2 3.2-8.4 3.2-12.6 0ZM37 24c-4.2-3.2-8.4-3.2-12.6 0 4.2 3.2 8.4 3.2 12.6 0Z" stroke-width="1.5" stroke-linejoin="round"/><circle cx="24" cy="24" r="2" fill="currentColor" stroke="none"/></svg>',
   });
 
   const waLink = (text) => `https://wa.me/${CFG.contact.whatsapp}${text ? "?text=" + encodeURIComponent(text) : ""}`;
@@ -116,7 +122,7 @@
             </div>
           </div>
           <div class="footer-bottom">
-            <span>© <span id="year"></span> ${esc(CFG.brand.name)} ${esc(CFG.brand.subtitle)}. Tüm hakları saklıdır.</span>
+            <span>© <span id="year"></span> ${esc(CFG.brand.name)} ${esc(CFG.brand.subtitle)}. Kadınlara özel hizmet verilir. Tüm hakları saklıdır.</span>
             <span><a href="yonetim.html" style="opacity:.6">Yönetim</a> · Tasarım &amp; Geliştirme: <a href="https://github.com/rebirthsoftware-code" target="_blank" rel="noopener">rebirthsoftware</a></span>
           </div>
         </div>
@@ -134,6 +140,7 @@
 
     document.title = document.title.replace("{{brand}}", `${CFG.brand.name} ${CFG.brand.subtitle}`);
 
+    document.body.classList.toggle("has-hero", !!document.getElementById("hero"));
     const nav = document.getElementById("nav");
     const burger = document.getElementById("burger");
     const onScroll = () => nav && nav.classList.toggle("scrolled", window.scrollY > 24 || document.body.dataset.solidNav === "1");
