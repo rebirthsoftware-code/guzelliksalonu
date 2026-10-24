@@ -41,7 +41,7 @@
       d.classList.toggle("active", k === n);
       d.classList.toggle("done", k < n);
     });
-    if (n === 3) renderCalendar();
+    if (n === 3) { renderCalendar(); if (state.date && !state.time) loadSlots(); }
     if (n === 5) renderConfirm();
     window.scrollTo({ top: $("stepper").offsetTop - 100, behavior: "smooth" });
   }
@@ -286,8 +286,16 @@
 
   /* ---------- Başlat ---------- */
   function init() {
-    const pre = new URLSearchParams(location.search).get("hizmet");
+    const q = new URLSearchParams(location.search);
+    const pre = q.get("hizmet");
     if (pre && Util.serviceById(pre)) state.services = [pre];
+    const preBarber = q.get("uzman");
+    if (preBarber && Util.barberById(preBarber)) state.barberId = preBarber;
+    const preDate = q.get("tarih");
+    if (preDate && /^\d{4}-\d{2}-\d{2}$/.test(preDate)) {
+      const d = Util.parseDateStr(preDate);
+      if (d >= today && d <= maxDate && Util.dayHours(preDate)) { state.date = preDate; state.calYear = d.getFullYear(); state.calMonth = d.getMonth(); }
+    }
 
     $("cal-prev").innerHTML = I.left; $("cal-next").innerHTML = I.right;
     renderServices(); renderBarbers(); updateSummary();

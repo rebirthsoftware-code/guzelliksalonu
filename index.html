@@ -5,51 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{brand}} — Saç, Cilt, Tırnak & Makyaj</title>
   <meta name="description" content="Kadınlara özel güzellik salonu. Saç tasarımı, balyaj, keratin bakımı, manikür & pedikür, cilt bakımı, kaş & kirpik, makyaj ve gelin paketi. Online randevu alın.">
-  <meta name="theme-color" content="#fbf7f4">
+  <meta name="theme-color" content="#fdf9f6">
   <meta property="og:title" content="ELARA Güzellik & Bakım Salonu">
   <meta property="og:description" content="Kendinize ayırdığınız en özel zaman. Kadınlara özel güzellik salonu, online randevu alın.">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Marcellus&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <div id="nav-host"></div>
 
   <!-- HERO -->
-  <header class="hero on-dark" id="hero">
-    <div class="hero-bg"><img id="hero-img" src="" alt="Güzellik salonu"></div>
-    <div class="hero-grain"></div>
-    <div class="container">
+  <header class="hero" id="hero">
+    <div class="blobs"><span class="blob rose"></span><span class="blob peach"></span><span class="blob lilac"></span></div>
+    <span class="sparkle" style="left:6%;top:22%;width:22px;height:22px"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c1 6.5 5.5 11 12 12-6.5 1-11 5.5-12 12-1-6.5-5.5-11-12-12 6.5-1 11-5.5 12-12Z"/></svg></span>
+    <span class="sparkle d2" style="left:44%;top:14%;width:14px;height:14px"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c1 6.5 5.5 11 12 12-6.5 1-11 5.5-12 12-1-6.5-5.5-11-12-12 6.5-1 11-5.5 12-12Z"/></svg></span>
+    <span class="sparkle d3" style="right:8%;bottom:26%;width:18px;height:18px"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c1 6.5 5.5 11 12 12-6.5 1-11 5.5-12 12-1-6.5-5.5-11-12-12 6.5-1 11-5.5 12-12Z"/></svg></span>
+    <div class="container hero-grid">
       <div class="hero-content">
         <span class="eyebrow reveal in">Kadınlara Özel Güzellik Salonu</span>
-        <h1 class="reveal in" data-delay="1">Güzelliğinizi <em class="accent">ortaya çıkarın.</em></h1>
+        <div class="reveal in" data-delay="1">
+          <div class="hero-script">Kendinize bir iyilik yapın</div>
+          <h1>Güzelliğinizi <em class="accent">ortaya çıkarın.</em></h1>
+        </div>
         <p class="lead reveal in" data-delay="2" id="hero-tagline"></p>
         <div class="hero-actions reveal in" data-delay="3">
           <a class="btn btn-gold btn-lg" href="randevu.html">Online Randevu Al</a>
           <a class="btn btn-ghost btn-lg" href="#hizmetler">Hizmetleri İncele</a>
         </div>
-        <div class="hero-meta reveal in" data-delay="3">
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><b id="hero-addr"></b></span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><b id="hero-hours"></b></span>
-          <span><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7L12 17.7 5.8 21.2l1.4-7L2 9.4l7-.8Z"/></svg><b>4.9 / 5 Google</b></span>
+        <div class="trust reveal in" data-delay="3">
+          <div class="avatars" id="hero-avatars"></div>
+          <div><span class="stars">★★★★★</span> <b>4.9</b> · <b id="hero-count"></b> mutlu misafir</div>
         </div>
       </div>
-    </div>
-    <div class="hero-badge" aria-hidden="true">
-      <svg viewBox="0 0 150 150">
-        <defs><path id="circ" d="M75,75 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/></defs>
-        <text><textPath href="#circ">RANDEVU AL • SAÇ • CİLT • TIRNAK • </textPath></text>
-        <path d="M75 55c4 5 4 10 0 15-4-5-4-10 0-15ZM75 95c4-5 4-10 0-15-4 5-4 10 0 15ZM55 75c5-4 10-4 15 0-5 4-10 4-15 0ZM95 75c-5-4-10-4-15 0 5 4 10 4 15 0Z" fill="none" stroke="#efc3cb" stroke-width="1.4" stroke-linejoin="round"/>
-        <circle cx="75" cy="75" r="30" fill="none" stroke="#efc3cb" stroke-width=".8" opacity=".6"/>
-      </svg>
+      <div class="hero-visual reveal in" data-delay="2">
+        <div class="hero-arch"><img id="hero-img" src="" alt="Salon misafiri"></div>
+        <div class="hero-card one"><img id="hero-card1" src="" alt="Fön ve şekillendirme"></div>
+        <div class="hero-card two"><img id="hero-card2" src="" alt="Tırnak tasarımı"></div>
+        <span class="pill-badge b"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V5Z"/><path d="m9 12 2 2 4-4"/></svg></i>Sadece kadınlara özel</span>
+        <span class="pill-badge a"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></i><span id="hero-hours"></span></span>
+      </div>
     </div>
   </header>
 
+  <!-- HIZLI RANDEVU -->
+  <section class="quick">
+    <div class="container">
+      <form class="quick-bar reveal in" id="quick-form">
+        <div class="quick-field">
+          <label for="q-service">Hizmet</label>
+          <select id="q-service"></select>
+        </div>
+        <div class="quick-field">
+          <label for="q-barber">Uzman</label>
+          <select id="q-barber"><option value="">Fark etmez</option></select>
+        </div>
+        <div class="quick-field">
+          <label for="q-date">Tarih</label>
+          <input type="date" id="q-date">
+        </div>
+        <button class="btn btn-gold btn-lg" type="submit">Uygun Saatleri Gör</button>
+      </form>
+    </div>
+  </section>
+
   <!-- İSTATİSTİK -->
-  <section class="stats"><div class="container" id="stats"></div></section>
+  <section class="stats"><div class="container reveal" id="stats"></div></section>
 
   <!-- KAYAN BANT -->
   <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
@@ -57,11 +81,9 @@
   <!-- HİZMETLER -->
   <section class="section" id="hizmetler">
     <div class="container">
-      <div class="section-head split">
-        <div>
-          <span class="eyebrow reveal">Hizmetlerimiz</span>
-          <h2 class="reveal" data-delay="1" style="margin-top:14px">Her detay <em class="accent">özenle</em> planlanır</h2>
-        </div>
+      <div class="section-head center">
+        <span class="eyebrow reveal">Hizmetlerimiz</span>
+        <h2 class="reveal" data-delay="1"><span class="script">Sizin için</span><br>her detay özenle planlanır</h2>
         <p class="lead reveal" data-delay="2">Fiyatlar KDV dahildir. Süreler yaklaşık olup saç uzunluğuna ve işlem yoğunluğuna göre değişebilir.</p>
       </div>
       <div class="services-grid" id="services"></div>
@@ -69,53 +91,71 @@
   </section>
 
   <!-- HAKKIMIZDA -->
-  <section class="section about" id="hakkimizda">
+  <section class="section about band" id="hakkimizda">
+    <svg class="wave top" viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,70 C240,0 480,0 720,35 C960,70 1200,70 1440,10 L1440,70 Z" fill="#fdf9f6"/></svg>
     <div class="container about-grid">
       <div class="about-media reveal">
         <img class="main" id="about-img" src="" alt="Salon içi" loading="lazy">
         <img class="float" id="about-img2" src="" alt="Makyaj ürünleri" loading="lazy">
-        <div class="since"><small>SINCE</small><b id="since-year"></b></div>
+        <svg class="ring" viewBox="0 0 136 136" aria-hidden="true">
+          <defs><path id="ring2" d="M68,68 m-52,0 a52,52 0 1,1 104,0 a52,52 0 1,1 -104,0"/></defs>
+          <circle cx="68" cy="68" r="66" fill="#fff"/>
+          <text><textPath href="#ring2">SINCE <tspan id="since-year"></tspan> • KADINLARA ÖZEL • </textPath></text>
+          <path d="M68 50c3.5 4.5 3.5 9 0 13.5-3.5-4.5-3.5-9 0-13.5ZM68 86c3.5-4.5 3.5-9 0-13.5-3.5 4.5-3.5 9 0 13.5ZM50 68c4.5-3.5 9-3.5 13.5 0-4.5 3.5-9 3.5-13.5 0ZM86 68c-4.5-3.5-9-3.5-13.5 0 4.5 3.5 9 3.5 13.5 0Z" fill="none" stroke="#c0697b" stroke-width="1.4" stroke-linejoin="round"/>
+        </svg>
       </div>
       <div class="about-text">
         <span class="eyebrow reveal">Hakkımızda</span>
         <h2 class="reveal" data-delay="1">Bakım bizim için bir <em class="accent">ritüel</em></h2>
         <p class="lead reveal" data-delay="2" id="about-desc"></p>
         <div class="features reveal" data-delay="3">
-          <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 4 5v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V5Z"/><path d="m9 12 2 2 4-4"/></svg><div><b>Hijyen Garantisi</b><span>Her misafir için steril ekipman ve tek kullanımlık malzeme.</span></div></div>
-          <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Zamanında Hizmet</b><span>Randevu saatinize sadık kalırız, bekletmeyiz.</span></div></div>
-          <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 8 4 4 5-7 5 7 4-4-2 11H5Z"/><path d="M5 21h14"/></svg><div><b>Premium Ürünler</b><span>Saçınızı ve cildinizi yıpratmayan profesyonel markalar.</span></div></div>
-          <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21c-5 0-9-4-9-8 4 0 7 2 9 5 2-3 5-5 9-5 0 4-4 8-9 8Z"/><path d="M12 13c-2-3-2-7 0-10 2 3 2 7 0 10Z"/></svg><div><b>Kadınlara Özel Alan</b><span>Yalnızca kadınlara hizmet veren, mahremiyetinize saygılı bir ortam.</span></div></div>
+          <div class="feature"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 4 5v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V5Z"/><path d="m9 12 2 2 4-4"/></svg></i><div><b>Hijyen Garantisi</b><span>Her misafir için steril ekipman ve tek kullanımlık malzeme.</span></div></div>
+          <div class="feature"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></i><div><b>Zamanında Hizmet</b><span>Randevu saatinize sadık kalırız, bekletmeyiz.</span></div></div>
+          <div class="feature"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 8 4 4 5-7 5 7 4-4-2 11H5Z"/><path d="M5 21h14"/></svg></i><div><b>Premium Ürünler</b><span>Saçınızı ve cildinizi yıpratmayan profesyonel markalar.</span></div></div>
+          <div class="feature"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21c-5 0-9-4-9-8 4 0 7 2 9 5 2-3 5-5 9-5 0 4-4 8-9 8Z"/><path d="M12 13c-2-3-2-7 0-10 2 3 2 7 0 10Z"/></svg></i><div><b>Kadınlara Özel Alan</b><span>Yalnızca kadınlara hizmet veren, mahremiyetinize saygılı bir ortam.</span></div></div>
         </div>
+        <div class="signature reveal" data-delay="3"><span class="script" id="founder-name"></span><small>Kurucu</small></div>
         <div class="reveal" data-delay="3"><a class="btn btn-gold" href="randevu.html">Randevu Oluştur</a></div>
       </div>
     </div>
   </section>
 
-  <!-- DENEYİM -->
-  <section class="experience on-dark">
-    <img id="exp-img" src="" alt="Salon içi" loading="lazy">
+  <!-- RİTÜEL -->
+  <section class="section ritual band">
+    <div class="blobs"><span class="blob rose"></span></div>
     <div class="container">
-      <div class="experience-content">
+      <div class="section-head center">
         <span class="eyebrow reveal">Deneyim</span>
-        <h2 class="reveal" data-delay="1">Koltuğa oturduğunuz andan itibaren <em class="accent">size özel.</em></h2>
-        <ul class="exp-list reveal" data-delay="2">
-          <li>Saç yapınıza, cilt tipinize ve tarzınıza göre kişisel danışmanlık</li>
-          <li>Hassas ciltlere uygun, hayvan deneyi yapılmayan profesyonel ürünler</li>
-          <li>İşlem sonrası evde bakım önerileri ve ürün rehberliği</li>
-          <li>Kahve ve bitki çayı ikramıyla sakin, ferah bir atmosfer</li>
-        </ul>
+        <h2 class="reveal" data-delay="1">Koltuğa oturduğunuz andan itibaren <em class="accent">size özel</em></h2>
+        <p class="lead reveal" data-delay="2">Her randevu üç adımlık küçük bir ritüel: dinleriz, uygularız, bakımı sürdürmeniz için yanınızda oluruz.</p>
+      </div>
+      <div class="steps">
+        <article class="step-card reveal">
+          <figure><img src="assets/img/ritual-1.jpg" alt="Danışmanlık" loading="lazy"><span class="step-num">1</span></figure>
+          <h3>Danışmanlık</h3>
+          <p>Saç yapınızı, cilt tipinizi ve tarzınızı birlikte değerlendiririz. Kahve ya da bitki çayınız eşliğinde isteklerinizi dinleriz.</p>
+        </article>
+        <article class="step-card reveal" data-delay="1">
+          <figure><img src="assets/img/ritual-2.jpg" alt="Uygulama" loading="lazy"><span class="step-num">2</span></figure>
+          <h3>Uygulama</h3>
+          <p>Hassas ciltlere uygun, hayvan deneyi yapılmayan profesyonel ürünlerle, acele etmeden ve özenle.</p>
+        </article>
+        <article class="step-card reveal" data-delay="2">
+          <figure><img src="assets/img/ritual-3.jpg" alt="Bakım önerileri" loading="lazy"><span class="step-num">3</span></figure>
+          <h3>Bakım Önerileri</h3>
+          <p>Evde bakım rutini, ürün rehberliği ve bir sonraki randevu için en uygun zamanı birlikte planlarız.</p>
+        </article>
       </div>
     </div>
+    <svg class="wave bottom" viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,0 C240,70 480,70 720,35 C960,0 1200,0 1440,60 L1440,70 L0,70 Z" fill="#fdf9f6"/></svg>
   </section>
 
   <!-- EKİP -->
   <section class="section" id="ekip">
     <div class="container">
-      <div class="section-head split">
-        <div>
-          <span class="eyebrow reveal">Ekibimiz</span>
-          <h2 class="reveal" data-delay="1" style="margin-top:14px">Güzelliğinize dokunan <em class="accent">uzmanlar</em></h2>
-        </div>
+      <div class="section-head center">
+        <span class="eyebrow reveal">Ekibimiz</span>
+        <h2 class="reveal" data-delay="1">Güzelliğinize dokunan <em class="accent">uzmanlar</em></h2>
         <p class="lead reveal" data-delay="2">Randevu alırken dilediğiniz uzmanı seçebilir ya da uygunluğa göre ilk boş uzmanı tercih edebilirsiniz.</p>
       </div>
       <div class="team-grid" id="team"></div>
@@ -125,18 +165,21 @@
   <!-- GALERİ -->
   <section class="section" id="galeri" style="padding-top:0">
     <div class="container">
-      <div class="section-head">
+      <div class="section-head center">
         <span class="eyebrow reveal">Galeri</span>
-        <h2 class="reveal" data-delay="1">İşimizden <em class="accent">kareler</em></h2>
+        <h2 class="reveal" data-delay="1"><span class="script">İşimizden</span><br>kareler</h2>
       </div>
       <div class="gallery-grid reveal" id="gallery"></div>
+      <div class="gallery-cta reveal"><a class="btn btn-ghost" id="ig-link" href="#" target="_blank" rel="noopener">Instagram'da Takip Edin</a></div>
     </div>
   </section>
 
   <!-- YORUMLAR -->
-  <section class="section reviews">
+  <section class="section reviews band">
+    <div class="blobs"><span class="blob lilac"></span></div>
+    <svg class="wave top" viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,70 C240,0 480,0 720,35 C960,70 1200,70 1440,10 L1440,70 Z" fill="#fdf9f6"/></svg>
     <div class="container">
-      <div class="section-head">
+      <div class="section-head center">
         <span class="eyebrow reveal">Misafirlerimiz</span>
         <h2 class="reveal" data-delay="1">Onlar <em class="accent">ne diyor?</em></h2>
       </div>
@@ -151,16 +194,16 @@
         <div>
           <span class="eyebrow">Online Rezervasyon</span>
           <h2 style="margin-top:14px">Yerinizi şimdi ayırtın, <em class="accent">sıra beklemeyin.</em></h2>
-          <p class="lead">Hizmetinizi ve uzmanınızı seçin, uygun saati işaretleyin. Onay kodunuz anında oluşur, WhatsApp üzerinden de bize iletebilirsiniz.</p>
+          <p class="lead" style="margin-top:14px">Hizmetinizi ve uzmanınızı seçin, uygun saati işaretleyin. Onay kodunuz anında oluşur, WhatsApp üzerinden de bize iletebilirsiniz.</p>
           <div class="hero-actions" style="margin-top:28px">
-            <a class="btn btn-gold btn-lg" href="randevu.html">Randevu Al</a>
+            <a class="btn btn-white btn-lg" href="randevu.html">Randevu Al</a>
             <a class="btn btn-wa btn-lg" id="cta-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
           </div>
         </div>
-        <div class="cta-side" style="width:100%">
+        <div class="cta-side">
           <span class="eyebrow">Çalışma Saatleri</span>
           <table class="hours-table"><tbody id="hours"></tbody></table>
-          <a class="btn btn-ghost btn-sm" id="cta-map" href="#" target="_blank" rel="noopener">Yol Tarifi Al</a>
+          <a class="btn btn-white btn-sm" id="cta-map" href="#" target="_blank" rel="noopener">Yol Tarifi Al</a>
         </div>
       </div>
     </div>

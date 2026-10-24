@@ -69,21 +69,21 @@ window.SITE_CONFIG = {
   },
 
   services: [
-    { id: "sac-fon",   name: "Saç Kesimi & Fön",        price: 1200,  duration: 60,  icon: "dryer",
+    { id: "sac-fon",   name: "Saç Kesimi & Fön",        price: 1200,  duration: 60,  icon: "dryer", image: "assets/img/gallery-1.jpg",
       desc: "Yüz hatlarınıza ve yaşam tarzınıza uygun kesim, yıkama ve şekillendirici fön ile tamamlanır." },
-    { id: "boya",      name: "Saç Boyama & Balyaj",     price: 4500,  duration: 180, icon: "drop",
+    { id: "boya",      name: "Saç Boyama & Balyaj",     price: 4500,  duration: 180, icon: "drop", image: "assets/img/service-boya.jpg",
       desc: "Dip boya, ombre, balyaj ya da tam renk değişimi. Saçınızı yıpratmayan profesyonel ürünlerle." },
-    { id: "keratin",   name: "Keratin & Botoks Bakımı", price: 5000,  duration: 150, icon: "sparkle",
+    { id: "keratin",   name: "Keratin & Botoks Bakımı", price: 5000,  duration: 150, icon: "sparkle", image: "assets/img/service-keratin.jpg",
       desc: "Elektriklenmeyi ve kabarmayı önleyen, saça parlaklık ve yumuşaklık kazandıran yoğun bakım." },
-    { id: "manikur",   name: "Manikür & Pedikür",       price: 1500,  duration: 90,  icon: "nail",
+    { id: "manikur",   name: "Manikür & Pedikür",       price: 1500,  duration: 90,  icon: "nail", image: "assets/img/gallery-2.jpg",
       desc: "Tırnak bakımı, şekillendirme, nasır ve kütikül temizliği. Dilerseniz kalıcı oje ile tamamlanır." },
-    { id: "cilt",      name: "Cilt Bakımı",             price: 2000,  duration: 60,  icon: "spa",
+    { id: "cilt",      name: "Cilt Bakımı",             price: 2000,  duration: 60,  icon: "spa", image: "assets/img/gallery-4.jpg",
       desc: "Cilt analizi sonrası derin temizlik, peeling, maske ve nemlendirme ile ışıltılı bir cilt." },
-    { id: "kas-kirpik",name: "Kaş & Kirpik Tasarımı",   price: 1200,  duration: 60,  icon: "lash",
+    { id: "kas-kirpik",name: "Kaş & Kirpik Tasarımı",   price: 1200,  duration: 60,  icon: "lash", image: "assets/img/gallery-5.jpg",
       desc: "Kaş laminasyon, kaş şekillendirme ve kirpik lifting ile bakışlarınızı belirginleştirin." },
-    { id: "makyaj",    name: "Profesyonel Makyaj",      price: 2500,  duration: 60,  icon: "brush",
+    { id: "makyaj",    name: "Profesyonel Makyaj",      price: 2500,  duration: 60,  icon: "brush", image: "assets/img/gallery-3.jpg",
       desc: "Davet, nişan ve özel günleriniz için cilt tipinize ve kıyafetinize uygun kalıcı makyaj." },
-    { id: "gelin",     name: "Gelin Paketi",            price: 25000, duration: 300, icon: "crown", featured: true,
+    { id: "gelin",     name: "Gelin Paketi",            price: 25000, duration: 300, icon: "crown", image: "assets/img/gallery-6.jpg", featured: true,
       desc: "Deneme dahil gelin saçı ve makyajı, cilt bakımı, manikür ve kaş tasarımı. En özel gününüz için." },
   ],
 
@@ -119,7 +119,9 @@ window.SITE_CONFIG = {
     { src: "assets/img/gallery-8.jpg", alt: "Makyaj fırçaları" },
   ],
 
-  heroImage:  "assets/img/hero.jpg",
+  heroImage:  "assets/img/gallery-6.jpg",          // Kemerli büyük görsel
+  heroCards:  ["assets/img/gallery-1.jpg", "assets/img/gallery-2.jpg"],   // Yüzen küçük kartlar
+  heroAvatars:["assets/img/team-1.jpg", "assets/img/team-2.jpg", "assets/img/team-3.jpg", "assets/img/team-5.jpg"],
   aboutImage: "assets/img/about-1.jpg",
   aboutImage2:"assets/img/about-2.jpg",
   experienceImage: "assets/img/experience.jpg",

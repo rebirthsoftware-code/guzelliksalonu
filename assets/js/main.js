@@ -156,6 +156,8 @@
   const io = new IntersectionObserver((entries) => entries.forEach((e) => e.isIntersecting && (e.target.classList.add("in"), io.unobserve(e.target))), { threshold: 0.12 });
   function observeReveals() {
     document.querySelectorAll(".reveal:not(.in)").forEach((el) => io.observe(el));
+    // Güvenlik payı: gözlemci tetiklenmese bile içerik birkaç saniye sonra görünür olur.
+    setTimeout(() => document.querySelectorAll(".reveal:not(.in)").forEach((el) => el.classList.add("in")), 4000);
   }
 
   /* ---------- Ana sayfa ---------- */
@@ -164,19 +166,38 @@
     if (!$("hero")) return;
 
     $("hero-img").src = CFG.heroImage;
+    $("hero-card1").src = CFG.heroCards[0];
+    $("hero-card2").src = CFG.heroCards[1];
     $("hero-tagline").textContent = CFG.brand.tagline;
-    $("hero-addr").textContent = CFG.contact.address.split(",").slice(-1)[0].trim();
-    $("hero-hours").textContent = CFG.hoursLabel[0].days + " " + CFG.hoursLabel[0].time;
+    const todayHours = Util.dayHours(Util.toDateStr(new Date()));
+    $("hero-hours").textContent = todayHours ? `Bugün ${todayHours.open} – ${todayHours.close}` : "Bugün kapalı";
+    $("hero-avatars").innerHTML = CFG.heroAvatars.map((src) => `<img src="${esc(src)}" alt="">`).join("");
+    $("hero-count").textContent = CFG.stats[0].value;
+
+    // Hızlı randevu çubuğu
+    $("q-service").innerHTML = CFG.services.map((s) => `<option value="${s.id}">${esc(s.name)}</option>`).join("");
+    $("q-barber").innerHTML += CFG.team.map((t) => `<option value="${t.id}">${esc(t.name)}</option>`).join("");
+    const today = Util.toDateStr(new Date());
+    const max = new Date(); max.setDate(max.getDate() + CFG.booking.daysAhead);
+    $("q-date").min = today; $("q-date").max = Util.toDateStr(max); $("q-date").value = today;
+    $("quick-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const u = new URLSearchParams({ hizmet: $("q-service").value });
+      if ($("q-barber").value) u.set("uzman", $("q-barber").value);
+      if ($("q-date").value) u.set("tarih", $("q-date").value);
+      location.href = "randevu.html?" + u.toString();
+    });
 
     $("stats").innerHTML = CFG.stats.map((s) => `<div class="stat"><b>${esc(s.value)}</b><span>${esc(s.label)}</span></div>`).join("");
-
-    const items = [...CFG.marquee, ...CFG.marquee].map((t) => `<span>${esc(t)}</span>`).join("");
-    $("marquee").innerHTML = items;
+    $("marquee").innerHTML = [...CFG.marquee, ...CFG.marquee].map((t) => `<span>${esc(t)}</span>`).join("");
 
     $("services").innerHTML = CFG.services.map((s, i) => `
       <article class="card service-card reveal" data-delay="${i % 4 ? Math.min(i % 4, 3) : 0}">
         ${s.featured ? '<span class="tag">Popüler</span>' : ""}
-        <div class="service-icon">${I[s.icon] || I.scissors}</div>
+        <div class="service-media">
+          <img src="${esc(s.image)}" alt="${esc(s.name)}" loading="lazy">
+          <div class="service-icon">${I[s.icon] || I.sparkle}</div>
+        </div>
         <h3>${esc(s.name)}</h3>
         <p>${esc(s.desc)}</p>
         <div class="service-foot">
@@ -190,20 +211,23 @@
     $("about-img2").src = CFG.aboutImage2;
     $("about-desc").textContent = CFG.brand.description;
     $("since-year").textContent = CFG.brand.since;
-    $("exp-img").src = CFG.experienceImage;
+    $("founder-name").textContent = CFG.team[0].name;
 
     $("team").innerHTML = CFG.team.map((t, i) => `
       <article class="member reveal" data-delay="${i % 3}">
-        <img src="${esc(t.photo)}" alt="${esc(t.name)}" loading="lazy">
-        <span class="member-exp">${esc(t.exp)} deneyim</span>
+        <div class="member-photo">
+          <img src="${esc(t.photo)}" alt="${esc(t.name)}" loading="lazy">
+          <span class="member-exp">${esc(t.exp)}</span>
+          <div class="member-skills">${t.skills.map((k) => `<i>${esc(k)}</i>`).join("")}</div>
+        </div>
         <div class="member-info">
           <span>${esc(t.role)}</span>
           <h3>${esc(t.name)}</h3>
-          <div class="member-skills">${t.skills.map((k) => `<i>${esc(k)}</i>`).join("")}</div>
         </div>
       </article>`).join("");
 
     $("gallery").innerHTML = CFG.gallery.map((g) => `<a href="${esc(g.src)}" target="_blank" rel="noopener" data-label="${esc(g.alt)}"><img src="${esc(g.src)}" alt="${esc(g.alt)}" loading="lazy"></a>`).join("");
+    $("ig-link").href = CFG.contact.instagram;
 
     $("reviews").innerHTML = CFG.reviews.map((r, i) => `
       <article class="card review reveal" data-delay="${i}">

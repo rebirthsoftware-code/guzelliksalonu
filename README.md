@@ -7,9 +7,9 @@ tüm site statik HTML/CSS/JS dosyalarından oluşur.
 ## Özellikler
 
 **Web sitesi (`index.html`)**
-- Tam ekran hero, istatistikler, kayan bant
+- Kemerli fotoğraf kolajlı hero, hızlı randevu çubuğu (hizmet + uzman + tarih), istatistikler, kayan bant
 - Hizmetler ve fiyat listesi (saç, renk, keratin, manikür & pedikür, cilt bakımı, kaş & kirpik, makyaj, gelin paketi)
-- Hakkımızda, deneyim bandı, uzman ekip kartları, galeri, misafir yorumları, çalışma saatleri
+- Hakkımızda, üç adımlı ritüel bölümü, uzman ekip kartları, galeri, misafir yorumları, çalışma saatleri
 - Sabit WhatsApp butonu, mobil uyumlu menü, kaydırma animasyonları
 
 **Randevu sistemi (`randevu.html`)**
@@ -45,8 +45,9 @@ Tüm içerik tek dosyadan yönetilir: [`assets/js/config.js`](assets/js/config.j
 | `hours` / `hoursLabel` | Günlük çalışma saatleri (randevu hesabında kullanılır) ve sitede gösterilen metin |
 | `holidays` | Randevuya kapalı özel günler |
 | `booking` | Saat dilimi aralığı, kaç gün ileriye randevu alınabileceği, en az kaç dakika sonrası |
-| `services` | Hizmet adı, fiyat, süre, açıklama, ikon |
+| `services` | Hizmet adı, fiyat, süre, açıklama, ikon, görsel |
 | `team` | Uzmanlar, fotoğraf, unvan, deneyim |
+| `heroImage`, `heroCards`, `heroAvatars` | Hero bölümündeki görseller |
 | `gallery`, `reviews`, `stats` | Galeri görselleri, yorumlar, sayılar |
 | `admin.pin` | Yönetim paneli PIN kodu |
 | `api` | Google Sheets arka ucu adresi (aşağıya bakın) |
