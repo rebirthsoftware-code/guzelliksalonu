@@ -102,9 +102,9 @@
               <h4>Sayfalar</h4>
               <ul>
                 <li><a href="./">Ana Sayfa</a></li>
-                <li><a href="index.html#hizmetler">Hizmetler</a></li>
-                <li><a href="index.html#ekip">Ekibimiz</a></li>
-                <li><a href="index.html#galeri">Galeri</a></li>
+                <li><a href="./#hizmetler">Hizmetler</a></li>
+                <li><a href="./#ekip">Ekibimiz</a></li>
+                <li><a href="./#galeri">Galeri</a></li>
                 <li><a href="randevu.html">Randevu Al</a></li>
               </ul>
             </div>
