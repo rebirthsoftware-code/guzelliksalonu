@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Marcellus&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fdf9f6; --text: #332028; --muted: rgba(51,32,40,.66);
+    --rose: #c0697b; --rose-2: #e3a3b0; --rose-deep: #9e4d5f; --gilt: #c9a66b; --navy: #132033;
+    --font-display: "Playfair Display", serif; --font-accent: "Marcellus", serif; --font-script: "Great Vibes", cursive; --font-sans: "Inter", sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body { width: 1080px; height: 1920px; overflow: hidden; background: var(--bg); color: var(--text); font-family: var(--font-sans); position: relative; }
+  .blob { position: absolute; border-radius: 50%; filter: blur(90px); }
+  .b1 { width: 820px; height: 820px; background: #f6d2d9; top: -300px; right: -260px; opacity: .9; }
+  .b2 { width: 700px; height: 700px; background: #fbe3d2; bottom: 120px; left: -300px; opacity: .9; }
+  .b3 { width: 560px; height: 560px; background: #e8dbee; top: 48%; left: 30%; opacity: .7; }
+  .sparkle { position: absolute; color: var(--gilt); }
+  .sparkle svg { width: 100%; height: 100%; }
+
+  .top { position: absolute; top: 72px; left: 0; right: 0; display: grid; justify-items: center; gap: 14px; }
+  .logo { width: 150px; height: 150px; border-radius: 50%; background: #fff; box-shadow: 0 24px 50px -22px rgba(19,32,51,.45); overflow: hidden; display: grid; place-items: center; border: 4px solid #fff; }
+  .logo img { width: 100%; height: 100%; object-fit: cover; }
+  .presents { font-family: var(--font-accent); letter-spacing: .3em; font-size: 20px; color: var(--navy); }
+  .presents b { font-weight: 400; }
+
+  .headline { position: absolute; top: 320px; left: 80px; right: 80px; text-align: center; display: grid; gap: 6px; }
+  .script { font-family: var(--font-script); font-size: 74px; color: var(--rose); line-height: 1; }
+  .headline h1 { font-family: var(--font-display); font-weight: 500; font-size: 78px; line-height: 1.06; letter-spacing: -.01em; }
+  .headline h1 em { font-style: italic; color: var(--rose); }
+  .headline p { font-size: 27px; color: var(--muted); line-height: 1.45; margin-top: 14px; }
+
+  .phones { position: absolute; top: 695px; left: 0; right: 0; height: 880px; }
+  .phone { position: absolute; border-radius: 54px; background: #1d1620; padding: 14px; box-shadow: 0 60px 90px -40px rgba(51,32,40,.55); }
+  .phone .screen { border-radius: 42px; overflow: hidden; background: #fdf9f6; position: relative; }
+  .status { height: 46px; display: flex; align-items: center; justify-content: space-between; padding: 6px 28px 0; font-size: 15px; font-weight: 700; color: #332028; }
+  .status .dots { display: flex; gap: 5px; align-items: center; }
+  .status .dots i { display: block; width: 14px; height: 10px; border-radius: 2px; background: #332028; opacity: .85; }
+  .status .dots i:first-child { width: 10px; height: 10px; border-radius: 50%; }
+  .phone .screen img { width: 100%; display: block; }
+  .phone .notch { position: absolute; top: 10px; left: 50%; translate: -50% 0; width: 120px; height: 32px; border-radius: 20px; background: #1d1620; z-index: 2; }
+  .phone.main { left: 50%; translate: -50% 0; top: 0; width: 420px; z-index: 3; }
+  .phone.main .screen { height: 790px; }
+  .phone.left .screen, .phone.right .screen { height: 600px; }
+  .phone.left { left: 70px; top: 120px; width: 320px; rotate: -8deg; z-index: 2; opacity: .96; }
+  .phone.right { right: 70px; top: 120px; width: 320px; rotate: 8deg; z-index: 2; opacity: .96; }
+  .phone.left .screen, .phone.right .screen { border-radius: 34px; }
+  .phone.left, .phone.right { border-radius: 44px; }
+
+  .pill { position: absolute; z-index: 5; display: inline-flex; align-items: center; gap: 12px; padding: 14px 22px 14px 14px; border-radius: 999px; background: rgba(255,255,255,.92); box-shadow: 0 20px 40px -20px rgba(51,32,40,.4); font-weight: 700; font-size: 22px; border: 1px solid rgba(255,255,255,.9); backdrop-filter: blur(8px); }
+  .pill i { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: rgba(192,105,123,.14); color: var(--rose); }
+  .pill i svg { width: 22px; height: 22px; }
+
+  .features { position: absolute; top: 1555px; left: 80px; right: 80px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .feat { background: rgba(255,255,255,.75); border: 1px solid rgba(51,32,40,.08); border-radius: 22px; padding: 18px 12px; text-align: center; display: grid; justify-items: center; gap: 8px; }
+  .feat i { width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; background: #fff; color: var(--rose); box-shadow: 0 10px 24px -14px rgba(51,32,40,.4); }
+  .feat i svg { width: 22px; height: 22px; }
+  .feat b { font-size: 18px; line-height: 1.2; }
+
+  .bottom { position: absolute; left: 0; right: 0; bottom: 0; height: 190px; background: var(--navy); color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 0 80px; }
+  .bottom::before { content: ""; position: absolute; left: 0; right: 0; top: -60px; height: 60px; background: linear-gradient(180deg, transparent, rgba(19,32,51,.06)); }
+  .bottom .brand { display: grid; gap: 4px; }
+  .bottom .brand b { font-family: var(--font-accent); font-size: 30px; letter-spacing: .2em; }
+  .bottom .brand span { font-size: 18px; letter-spacing: .28em; opacity: .7; }
+  .cta { display: inline-flex; align-items: center; gap: 14px; padding: 22px 34px; border-radius: 999px; background: linear-gradient(135deg, var(--rose-2), var(--rose) 55%, var(--rose-deep)); font-weight: 800; font-size: 26px; box-shadow: 0 20px 40px -16px rgba(192,105,123,.7); }
+  .cta svg { width: 28px; height: 28px; }
+  .swipe { position: absolute; left: 0; right: 0; bottom: 206px; text-align: center; font-size: 20px; color: var(--muted); letter-spacing: .1em; font-family: var(--font-accent); }
+</style>
+</head>
+<body>
+  <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+  <span class="sparkle" style="left:92px;top:360px;width:40px;height:40px"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c1 6.5 5.5 11 12 12-6.5 1-11 5.5-12 12-1-6.5-5.5-11-12-12 6.5-1 11-5.5 12-12Z"/></svg></span>
+  <span class="sparkle" style="right:110px;top:300px;width:26px;height:26px"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c1 6.5 5.5 11 12 12-6.5 1-11 5.5-12 12-1-6.5-5.5-11-12-12 6.5-1 11-5.5 12-12Z"/></svg></span>
+  <span class="sparkle" style="right:160px;top:1480px;width:34px;height:34px"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c1 6.5 5.5 11 12 12-6.5 1-11 5.5-12 12-1-6.5-5.5-11-12-12 6.5-1 11-5.5 12-12Z"/></svg></span>
+  <span class="sparkle" style="left:150px;top:1240px;width:22px;height:22px"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c1 6.5 5.5 11 12 12-6.5 1-11 5.5-12 12-1-6.5-5.5-11-12-12 6.5-1 11-5.5 12-12Z"/></svg></span>
+
+  <div class="top">
+    <div class="logo"><img src="rebirth-logo.png" alt="Rebirth Software Systems"></div>
+    <div class="presents">REBIRTH SOFTWARE <b>SUNAR</b></div>
+  </div>
+
+  <div class="headline">
+    <div class="script">Güzellik salonunuz için</div>
+    <h1>Web sitesi &amp;<br><em>online randevu</em> sistemi</h1>
+    <p>Misafirleriniz 1 dakikada randevu alsın, siz takvimi tek ekrandan yönetin.<br>Kurulum 3 gün, aylık sunucu ücreti yok.</p>
+  </div>
+
+  <div class="phones">
+    <div class="phone left"><div class="screen"><span class="notch"></span><div class="status"><span>9:41</span><span class="dots"><i></i><i></i><i></i></span></div><img src="phone-booking.png" alt=""></div></div>
+    <div class="phone right"><div class="screen"><span class="notch"></span><div class="status"><span>9:41</span><span class="dots"><i></i><i></i><i></i></span></div><img src="phone-success.png" alt=""></div></div>
+    <div class="phone main"><div class="screen"><span class="notch"></span><div class="status"><span>9:41</span><span class="dots"><i></i><i></i><i></i></span></div><img src="phone-home.png" alt=""></div></div>
+
+    <span class="pill" style="left:60px;top:40px"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></i>Online Randevu</span>
+    <span class="pill" style="right:50px;top:40px"><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg></i>WhatsApp Bildirimi</span>
+    <span class="pill" style="left:40px;top:735px"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19h16M4 15l4-4 4 3 8-8"/></svg></i>Yönetim Paneli</span>
+    <span class="pill" style="right:40px;top:735px"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2 4 5v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V5Z"/><path d="m9 12 2 2 4-4"/></svg></i>Çakışma Kontrolü</span>
+  </div>
+
+  <div class="features">
+    <div class="feat"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg></i><b>Mobil<br>uyumlu</b></div>
+    <div class="feat"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></i><b>Gerçek boş<br>saat hesabı</b></div>
+    <div class="feat"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M2 20a7 7 0 0 1 14 0"/><path d="M16 4a3.5 3.5 0 0 1 0 7M22 20a7 7 0 0 0-5-6.7"/></svg></i><b>Uzman bazlı<br>takvim</b></div>
+    <div class="feat"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3c.6 4.2 2.8 6.4 7 7-4.2.6-6.4 2.8-7 7-.6-4.2-2.8-6.4-7-7 4.2-.6 6.4-2.8 7-7Z"/></svg></i><b>Size özel<br>tasarım</b></div>
+  </div>
+
+  <div class="swipe">DETAYLAR VE DEMO LİNKİ İÇİN DM GÖNDERİN</div>
+
+  <div class="bottom">
+    <div class="brand"><b>REBIRTH</b><span>SOFTWARE SYSTEMS</span></div>
+    <a class="cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.2L4 21l1.8-5.4A8 8 0 1 1 21 12Z"/></svg>Teklif için DM</a>
+  </div>
+</body>
+</html>
