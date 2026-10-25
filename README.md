@@ -8,7 +8,7 @@ tüm site statik HTML/CSS/JS dosyalarından oluşur.
 
 **Web sitesi (`index.html`)**
 - Kemerli fotoğraf kolajlı hero, hızlı randevu çubuğu (hizmet + uzman + tarih), istatistikler, kayan bant
-- Hizmetler ve fiyat listesi (saç, renk, keratin, manikür & pedikür, cilt bakımı, kaş & kirpik, makyaj, gelin paketi)
+- Hizmetler ve fiyat listesi (saç, renk, keratin, manikür & pedikür, protez tırnak, kalıcı oje, nail art, cilt bakımı, kaş & kirpik, ağda, makyaj, gelin paketi)
 - Hakkımızda, üç adımlı ritüel bölümü, uzman ekip kartları, galeri, misafir yorumları, çalışma saatleri
 - Sabit WhatsApp butonu, mobil uyumlu menü, kaydırma animasyonları
 
